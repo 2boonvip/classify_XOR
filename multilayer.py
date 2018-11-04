@@ -126,6 +126,6 @@ a = network()
 #learning process
 a.learning(x_train,y_train)
 
-#predicti
+#prediction
 result = [a.predict(x) for x in x_train]
 [print(x, ":", p) for p, x in zip(result, x_train)]
