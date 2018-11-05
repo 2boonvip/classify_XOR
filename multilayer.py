@@ -18,7 +18,7 @@ class network:
     def sigmoid(self,x):
         return 1 / (1 + np.exp(self.a * (-x)))
     
-#sigmoid differentation
+#derived sigmoid function 
     def sigmoid_d(self,x):
         return x * (1 - x)
     
@@ -31,7 +31,7 @@ class network:
             x[i][0] = 0
         return x
     
-#ReLU function defferentation    
+#derived ReLU function     
     def ReLU_d(self,x):
             if(x > 0):
                 x = 1
