@@ -1,7 +1,7 @@
 import numpy as np
 
 class network:
-    def __init__(self,epoch = 10000,lr = 0.01,middle1_num = 10,middle2_num = 10,output_num = 1,a = 50):
+    def __init__(self,epoch,lr,middle1_num,middle2_num,output_num,a):
         self.epoch = epoch 
         self.lr = lr #learning rate
         self.x_train = x_train
@@ -121,11 +121,20 @@ class network:
 x_train = [[0,0],[1,1],[1,0],[0,1]]
 y_train = [0,0,1,1]
 
-a = network()
+#parameters
+epoch = 10000
+lr = 0.01
+middle1_num = 15
+middle2_num = 15
+output_num = 1
+a = 50
+
+mlp = network(epoch,lr,middle1_num,middle2_num,output_num,a)
 
 #learning process
-a.learning(x_train,y_train)
+mlp.learning(x_train,y_train)
 
 #prediction
-result = [a.predict(x) for x in x_train]
+result = [mlp.predict(x) for x in x_train]
 [print(x, ":", p) for p, x in zip(result, x_train)]
+
