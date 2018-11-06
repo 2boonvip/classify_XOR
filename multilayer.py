@@ -1,5 +1,6 @@
 import numpy as np
-for c in range(10):
+
+for c in range(1):#for test
     class network:
         def __init__(self,epoch,lr,middle1_num,middle2_num,output_num,a):
             self.epoch = epoch 
@@ -20,7 +21,7 @@ for c in range(10):
         
     #derived sigmoid function 
         def sigmoid_d(self,x):
-            return x * (1 - x)
+            return x * (1 - self.a * x)
         
     #ReLU function
         def ReLU(self,x):
@@ -128,7 +129,7 @@ for c in range(10):
     middle1_num = 15 
     middle2_num = 15
     output_num = 1
-    a = 50
+    a = 2
     
     mlp = network(epoch,lr,middle1_num,middle2_num,output_num,a)
     
